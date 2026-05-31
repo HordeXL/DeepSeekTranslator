@@ -78,6 +78,7 @@ public partial class App : Application
 
             Logger.Write("创建主窗口...");
             var mainWindow = new MainWindow(settings);
+            mainWindow.Closed += (_, _) => Shutdown();
             Logger.Write("显示主窗口...");
             mainWindow.Show();
             Logger.Write("主窗口已显示");
